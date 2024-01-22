@@ -1,0 +1,21 @@
+INSERT INTO presentation (id, name, duration) VALUES
+                                                  ('d3b7698e-044b-46d8-a45a-8737d915a814', 'Architecting Your Codebase', 60),
+                                                  ('eafc1fcb-1034-40a1-a03a-ee582b48f563', 'Overdoing it in Python', 45),
+                                                  ('bfb9e4e2-cee1-4d77-b13e-a4a40d056318', 'Flavors of Concurrency in Java', 30),
+                                                  ('c596c1f9-9008-41b7-a2af-13f89fd59015', 'Ruby Errors from Mismatched Gem Versions', 45),
+                                                  ('e26a485b-76ca-4eda-b4a2-9b762aada9f1', 'JUnit 5 - Shaping the Future of Testing on the JVM', 45),
+                                                  ('8433524f-7b33-4306-927c-a8a86551e9f0', 'Cloud Native Java', 5),
+                                                  ('bcb278cd-05c5-4abc-a1ea-68141f748ca9', 'Communicating Over Distance', 60),
+                                                  ('b0568bcd-4b39-49c5-a722-856e4f0152ae', 'AWS Technical Essentials', 45),
+                                                  ('9c298e5d-ca30-4531-bcd0-4d4d5e57cded', 'Continuous Delivery', 30),
+                                                  ('10393d62-4051-463f-962d-b5010b0a2a87', 'Monitoring Reactive Applications', 30),
+                                                  ('681fb307-4391-4a96-bb4d-4998e02cef66', 'Pair Programming vs Noise', 45),
+                                                  ('93e1ea6b-7170-40c5-a8e8-16aa253729fd', 'Rails Magic', 60),
+                                                  ('653ff72a-1627-457a-aed8-5960de8ae2e7', 'Microservices "Just Right"', 60),
+                                                  ('59f01533-4ee6-4f1c-97c8-1eb2586967df', 'Clojure Ate Scala (on my project)', 45),
+                                                  ('051ac842-3ccf-470d-ae0a-b94d074ea3e4', 'Perfect Scalability', 30),
+                                                  ('e719ea54-9e1b-4109-ac3a-7992d711d0ec', 'Apache Spark', 30),
+                                                  ('080cf4d5-0a54-4ef3-aade-cb238548a631', 'Async Testing on JVM', 60),
+                                                  ('fbfdf225-2715-4937-9979-a33d910e4d79', 'A World Without HackerNews', 30),
+                                                  ('d7fcd776-0742-4100-b963-ff546a5f4560', 'User Interface CSS in Apps', 30)
+    ON CONFLICT (id) DO NOTHING;

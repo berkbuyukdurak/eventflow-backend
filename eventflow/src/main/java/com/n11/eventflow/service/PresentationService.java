@@ -8,6 +8,8 @@ import com.n11.eventflow.model.entity.Presentation;
 import com.n11.eventflow.repository.PresentationRepository;
 import com.n11.eventflow.constants.dictionaries.ExceptionDictionary;
 import com.n11.eventflow.util.mapper.MapperUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
@@ -19,6 +21,8 @@ public class PresentationService {
     private final PresentationRepository presentationRepository;
     private final MapperUtil mapperUtil;
 
+    private static final Logger logger = LogManager.getLogger(PresentationService.class);
+
     public PresentationService(PresentationRepository presentationRepository, MapperUtil mapperUtil) {
         this.presentationRepository = presentationRepository;
         this.mapperUtil = mapperUtil;
@@ -26,6 +30,7 @@ public class PresentationService {
 
     public CreatePresentationResponseDTO createPresentation(String name, int duration) {
         if (ObjectUtils.isEmpty(name) || ObjectUtils.isEmpty(duration)) {
+            logger.error(ExceptionDictionary.INVALID_PARAMETERS);
             throw new InvalidParameterException(ExceptionDictionary.INVALID_PARAMETERS);
         }
 

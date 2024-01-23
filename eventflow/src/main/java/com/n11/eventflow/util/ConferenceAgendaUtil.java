@@ -33,7 +33,7 @@ public class ConferenceAgendaUtil {
             if (networkingEventStartTime.isAfter(LocalTime.of(17, 0))) {
                 networkingEventStartTime = LocalTime.of(17, 0);
             }
-            afternoonAgenda.add(new ConferenceAgendaUtilDTO(networkingEventStartTime.format(CommonConstants.TIME_FORMATTER), "Networking Event", 60));
+            afternoonAgenda.add(new ConferenceAgendaUtilDTO(networkingEventStartTime.format(CommonConstants.TIME_FORMATTER), "Networking Event"));
 
             track.setTrack(combineAgendas(morningAgenda, afternoonAgenda));
             tracks.add(track);

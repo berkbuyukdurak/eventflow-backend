@@ -11,4 +11,9 @@ public class ConferenceAgendaUtilDTO {
     private String startTime;
     private String name;
     private int duration;
+
+    public ConferenceAgendaUtilDTO(String startTime, String name) {
+        this.startTime = startTime;
+        this.name = name;
+    }
 }

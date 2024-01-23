@@ -1,4 +1,4 @@
-package com.n11.eventflow.util.dictionaries;
+package com.n11.eventflow.constants.dictionaries;
 
 public class ValidationDictionary {
     public static final String BLANK_FIELD = "must not be blank!";

@@ -1,5 +1,6 @@
 package com.n11.eventflow.service;
 
+import com.n11.eventflow.constants.CommonConstants;
 import com.n11.eventflow.exception.InvalidParameterException;
 import com.n11.eventflow.model.dto.Presentation.PresentationInfoDTO;
 import com.n11.eventflow.model.dto.Presentation.Response.CreatePresentationResponseDTO;
@@ -32,6 +33,11 @@ public class PresentationService {
         if (ObjectUtils.isEmpty(name) || ObjectUtils.isEmpty(duration)) {
             logger.error(ExceptionDictionary.INVALID_PARAMETERS);
             throw new InvalidParameterException(ExceptionDictionary.INVALID_PARAMETERS);
+        }
+
+        if (duration <= 0 || duration > CommonConstants.MAX_SESSION_DURATION) {
+            logger.error("Invalid presentation duration: " + duration);
+            throw new InvalidParameterException("Invalid presentation duration. It should be greater than 0 and less than or equal to " + CommonConstants.MAX_SESSION_DURATION);
         }
 
         Presentation presentation = new Presentation(name, duration);

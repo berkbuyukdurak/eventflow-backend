@@ -225,6 +225,43 @@ EventFlow includes comprehensive error handling, providing appropriate HTTP resp
 
 ## Testing
 
+Testing is a crucial part of the EventFlow application development process, ensuring that all features work as intended and the scheduling algorithm performs correctly under various scenarios.
+
+### Test Strategy
+
+We employ a comprehensive test strategy that includes:
+
+- **Unit Testing**: Focused on individual components to validate that each unit of the software performs as designed.
+- **Edge Case Testing**: Identifying and testing the boundaries of the software to ensure stability under extreme conditions.
+
+### Test Tools
+
+- **JUnit**: Utilized for writing and executing unit tests.
+- **Mockito**: Employed for mocking objects and testing in isolation.
+- **Spring Boot Test**: For integration tests with Spring context loading.
+
+### Test Implementation
+
+Tests are written using JUnit and Mockito frameworks, which provide a robust platform for assertion and object mocking capabilities, ensuring that each component can be tested in isolation or in conjunction with others.
+
+### Specific Tests Conducted
+
+- `testAllocateSessions_WithValidPresentations`: Validates that a normal list of presentations is scheduled correctly, including lunch and networking events.
+- `testAllocateSessions_WithEmptyList`: Checks the behavior when no presentations are provided.
+- `testWithPresentationsFillingExactlyOneSession`: Ensures that presentations that exactly fill a session block are handled correctly.
+- `testWithExcessiveNumberOfPresentations`: Tests the system's ability to handle a large number of presentation requests.
+- `testWithPresentationsThatExactlyFitAMorningSession`: Verifies that presentations that fit perfectly into a morning session are scheduled without issues.
+- `testWithMaximumDurationPresentations`: Checks if presentations with maximum allowed durations are scheduled properly and if the algorithm correctly omits the networking event when the afternoon session is full.
+
+### Test Results
+Recent test execution confirmed all components are functioning as intended:
+
+```bash
+Total Tests: 6
+Passed: 6
+Failed: 0
+Duration: 647 ms
+```
 
 ## Conclusion
 

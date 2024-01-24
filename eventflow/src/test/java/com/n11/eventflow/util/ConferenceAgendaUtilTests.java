@@ -1,7 +1,6 @@
 package com.n11.eventflow.util;
 
 import com.n11.eventflow.constants.CommonConstants;
-import com.n11.eventflow.exception.InvalidParameterException;
 import com.n11.eventflow.model.dto.Agenda.ConferenceAgendaUtilDTO;
 import com.n11.eventflow.model.dto.Agenda.Response.TrackResponseDTO;
 import com.n11.eventflow.model.dto.Presentation.PresentationInfoDTO;
@@ -15,7 +14,6 @@ import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -129,8 +127,6 @@ public class ConferenceAgendaUtilTests {
         TrackResponseDTO track = tracks.get(0);
         List<ConferenceAgendaUtilDTO> scheduledTalks = track.getTrack();
 
-        System.out.println(scheduledTalks);
-
         // Check if morning talk is scheduled at the beginning
         assertEquals("Morning Talk", scheduledTalks.get(0).getName(), "First talk should be the morning talk");
         assertEquals("09:00AM", scheduledTalks.get(0).getStartTime(), "Morning talk should start at 9 AM");
@@ -146,5 +142,4 @@ public class ConferenceAgendaUtilTests {
         // Networking event should not be present due to afternoon talk's duration
         assertEquals("Afternoon Talk", scheduledTalks.get(scheduledTalks.size() - 1).getName(), "Networking event should not be scheduled");
     }
-
 }

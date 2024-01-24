@@ -97,7 +97,6 @@ public class ConferenceAgendaUtil {
      * @param sessionDuration The total duration available for the session.
      * @return List of ConferenceAgendaUtilDTO objects representing the scheduled presentations for the session.
      */
-
     private List<ConferenceAgendaUtilDTO> createAgenda(Queue<PresentationInfoDTO> presentations, LocalTime startTime, int sessionDuration) {
         List<ConferenceAgendaUtilDTO> agenda = new ArrayList<>();
         int remainingDuration = sessionDuration;

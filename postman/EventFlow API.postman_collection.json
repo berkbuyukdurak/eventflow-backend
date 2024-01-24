@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "fe6901f1-11b9-48c6-9047-ebadda15150d",
+		"name": "EventFlow API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20385183"
+	},
+	"item": [
+		{
+			"name": "Create Presentation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Microservices In Depth\",\n    \"duration\": 45\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/presentation/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"presentation",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Conference Agenda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/agenda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agenda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Presentations",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
